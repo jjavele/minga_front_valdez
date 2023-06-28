@@ -8,7 +8,7 @@ export default function Main({children}) {
             <NavBar/>
             {/* contenido dinámico de cada interfaz */}
             {children}
-            
+            {Index}
             <Footer/>
     </div>
   )
