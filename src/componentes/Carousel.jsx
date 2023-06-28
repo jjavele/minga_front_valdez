@@ -36,7 +36,7 @@ export default function Carousel() {
   }
 
   const currentCategory = categories[counter];
-  const { character_photo, cover_photo, description } = currentCategory;
+  const { character_photo, cover_photo, description, name} = currentCategory;
 
   return (
     <div className="flex flex-col h-[0] md:h-[100vh] items-center md:justify-end md:pb-16 bg-[#FFF]">
@@ -44,8 +44,11 @@ export default function Carousel() {
         <Arrow icon={iconLeft} onClick={prev} />
         <img className="w-[15vw] hidden md:block" src={categories[counter].character_photo} alt="footer-1"/>
         <img className="w-[12vw] mb-6 hidden md:block" src={categories[counter].cover_photo} alt="footer-2"/>
-        <p className="w-[35vw] text-center lg:text-[20px] text-[16px] text-[#FFF] [font-family:Roboto] hidden md:block">{categories[counter].description}
-        </p><Arrow icon={iconRight} onClick={next} />
+        <div>
+          <p className="w-[35vw] lg:text-[26px] text-[24px] text-[#FFF] [font-family:Roboto] hidden md:block">{categories[counter].name}:</p>
+          <p className="w-[35vw] text-center lg:text-[20px] text-[16px] text-[#FFF] [font-family:Roboto] hidden md:block">{categories[counter].description}</p>
+        </div>
+        <Arrow icon={iconRight} onClick={next} />
       </div>
     </div>
   );
